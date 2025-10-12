@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "pricera.hotline"
+version = "0.1.0"
+description = ""
+authors = []
+packages=[
+    {include="pricera/hotline/*"}
+]
+
+[tool.poetry-virtualenvs]
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
