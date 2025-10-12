@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "pricera.common"
+name = "pricera.hotline"
 version = "0.1.0"
 description = ""
 authors = []
 packages=[
-    {include="pricera/common/*"}
+    {include="pricera/hotline/*"}
 ]
 
 [tool.poetry-virtualenvs]
