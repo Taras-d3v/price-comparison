@@ -100,6 +100,20 @@ pyyaml = ">=5.1"
 virtualenv = ">=20.10.0"
 
 [[package]]
+name = "pricera-common"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "common"
+
+[[package]]
 name = "pyyaml"
 version = "6.0.3"
 description = "YAML parser and emitter for Python"
@@ -206,4 +220,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "4caa6d3fe71898f0b991fb5f5daea9af18024f22edc72c53833539ee4affa201"
+content-hash = "38bb55a71aebb3958f7073ef79efd56699369cbc4ed55eebe2459575ea3c87c6"
