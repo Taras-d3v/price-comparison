@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pricera"
+version = "0.1.0"
+description = ""
+package-mode = false
+authors = [
+    "TarasIvaniuk <181894998+Taras-d3v@users.noreply.github.com>"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
