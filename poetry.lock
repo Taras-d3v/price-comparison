@@ -114,6 +114,20 @@ type = "directory"
 url = "common"
 
 [[package]]
+name = "pricera-hotline"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "hotline"
+
+[[package]]
 name = "pyyaml"
 version = "6.0.3"
 description = "YAML parser and emitter for Python"
@@ -220,4 +234,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "38bb55a71aebb3958f7073ef79efd56699369cbc4ed55eebe2459575ea3c87c6"
+content-hash = "b984a26567a45ec5fb0b38ceb7a2fa5c0625b31142c5d5d083ecca5fa6622ee7"
