@@ -1,15 +1,13 @@
 [tool.poetry]
-name = "pricera.hotline"
+name = "pricera.models"
 version = "0.1.0"
 description = ""
 authors = []
 packages=[
-    {include="pricera/hotline/*"}
+    {include="pricera/models/*"}
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.13"
-scrapy = "^2.11.0"
 
 [build-system]
 requires = ["poetry>=1.0.0"]
