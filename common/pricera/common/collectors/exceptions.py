@@ -1,0 +1,6 @@
+class MessageFileNotFoundError(Exception):
+    ...
+
+
+class MessageFileFormatError(Exception):
+    ...
