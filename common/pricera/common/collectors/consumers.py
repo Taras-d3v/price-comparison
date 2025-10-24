@@ -7,7 +7,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, Generator
 
-from pika import BlockingConnection, ConnectionParameters, PlainCredentials,SSLOptions
+from pika import BlockingConnection, ConnectionParameters, PlainCredentials, SSLOptions
 from pricera.common import get_rabbitmq_host, get_rabbitmq_password, get_rabbitmq_user
 from pricera.common.collectors.exceptions import MessageFileFormatError, MessageFileNotFoundError
 
@@ -56,9 +56,7 @@ class FileBasedMessageConsumer:
         except json.JSONDecodeError as error:
             raise MessageFileFormatError(f"Invalid JSON in {self.file_path}: {error}")
         except OSError as error:
-            raise MessageFileFormatError(
-                f"Error reading file {self.file_path}: {error}"
-            )
+            raise MessageFileFormatError(f"Error reading file {self.file_path}: {error}")
 
     def consume(self) -> None:
         """

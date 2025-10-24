@@ -9,9 +9,7 @@ class ScrapyConfigurationMixin:
     def __init__(self):
         self.spider_instance = None
 
-    def process_scrapy_spider(
-        self, spider_cls, urls: list[str], proxy_config=None, **kwargs
-    ):
+    def process_scrapy_spider(self, spider_cls, urls: list[str], proxy_config=None, **kwargs):
         process = CrawlerProcess(get_project_settings())
         crawler = process.create_crawler(spider_cls)
 

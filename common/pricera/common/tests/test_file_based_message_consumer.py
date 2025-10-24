@@ -20,9 +20,7 @@ class TestFileBasedMessageConsumer(unittest.TestCase):
     def test_read_json_file_returns_expected_messages(self):
         """Test that _read_json_file correctly parses and returns message data."""
         test_file_path = os.path.join(self.messages_folder, "test_message_1.json")
-        consumer = FileBasedMessageConsumer(
-            file_path=test_file_path, function=lambda x: x
-        )
+        consumer = FileBasedMessageConsumer(file_path=test_file_path, function=lambda x: x)
 
         messages = list(consumer._read_json_file())
 

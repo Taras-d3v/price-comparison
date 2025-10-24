@@ -5,7 +5,6 @@ from pricera.hotline.parsers.listings_parser import HotlineListingsParser
 
 
 class TestHotlineListingsParser(unittest.TestCase):
-
     def test_parse(self):
         test_file = load_file_from_sub_folder(filename="hotline_listings.html")
         expected_result = {

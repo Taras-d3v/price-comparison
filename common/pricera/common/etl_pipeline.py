@@ -1,5 +1,3 @@
-
-
 from pricera.common.collectors import BaseCollector
 
 

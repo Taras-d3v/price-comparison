@@ -1,7 +1,3 @@
-
-
-
-
 class HotlineListingsParser:
     base_path = "https://hotline.ua"
 

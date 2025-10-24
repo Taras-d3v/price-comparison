@@ -11,13 +11,10 @@ class HotlineListingsCollector(BaseCollector):
     def crawl(self):
         from pricera.hotline.spiders.listings_spider import ListingsSpider
 
-        return self.process_scrapy_spider(
-            spider_cls=ListingsSpider, urls=self.links, proxy_config=None
-        )
+        return self.process_scrapy_spider(spider_cls=ListingsSpider, urls=self.links, proxy_config=None)
 
     def parse(self, response: ResponseObject) -> dict:
-        from pricera.hotline.parsers.listings_parser import \
-            HotlineListingsParser
+        from pricera.hotline.parsers.listings_parser import HotlineListingsParser
 
         return HotlineListingsParser.parse(response.text)
 
