@@ -118,7 +118,7 @@ class RabbitMQ:
                 function(body)
                 # Manually acknowledge the message after successful processing
                 ch.basic_ack(delivery_tag=method.delivery_tag)
-            except Exception as e:
+            except Exception:
                 print("error during the message processing, acknowledge")
 
         self.channel.basic_consume(
