@@ -9,4 +9,4 @@ jobs:
         with:
           python-version: '3.13'
       - run: pip install pre-commit
-      - run: pre-commit run --all-files
+      - run: pre-commit run --all-files --show-diff-on-failure
