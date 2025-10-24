@@ -7,11 +7,9 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, Generator, Optional
 
-from pika import (BlockingConnection, ConnectionParameters, PlainCredentials,
-                  SSLOptions)
-
-from pricera.common.collectors.exceptions import (MessageFileFormatError,
-                                                  MessageFileNotFoundError)
+from pika import BlockingConnection, ConnectionParameters, PlainCredentials,SSLOptions
+from pricera.common import get_rabbitmq_host, get_rabbitmq_password, get_rabbitmq_user
+from pricera.common.collectors.exceptions import MessageFileFormatError, MessageFileNotFoundError
 
 
 class Consumer(ABC):
@@ -24,7 +22,7 @@ class Consumer(ABC):
 
 
 @dataclass
-class FileBasedMessageConsumer(Consumer):
+class FileBasedMessageConsumer:
     """Message consumer that reads from JSON files."""
 
     file_path: str
@@ -74,10 +72,10 @@ class FileBasedMessageConsumer(Consumer):
 
 
 @dataclass
-class RabbitMQ(Consumer):
-    host: str
-    user: str
-    password: str
+class RabbitMQ:
+    host: str = get_rabbitmq_host()
+    user: str = get_rabbitmq_user()
+    password: str = get_rabbitmq_password()
     port: int = 5671
 
     def __post_init__(self):
