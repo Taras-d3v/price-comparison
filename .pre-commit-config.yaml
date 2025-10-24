@@ -20,9 +20,9 @@ repos:
         # Or add only the specific types you need:
         # additional_dependencies: [types-requests, types-pyyaml]
 
-  # For removing unused imports
+    # For removing unused imports
   - repo: https://github.com/PyCQA/autoflake
-    rev: v2.2.1
+    rev: v2.3.1
     hooks:
       - id: autoflake
         args:
