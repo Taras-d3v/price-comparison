@@ -9,7 +9,9 @@ authors = [
 
 [tool.poetry.dependencies]
 pricera-common = {path = "common", develop = true}
-python = ">=3.13"
+pricera-models = {path = "models", develop = true}
+pricera-hotline = {path = "hotline", develop = true}
+python = "3.13.1"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.3.0"
