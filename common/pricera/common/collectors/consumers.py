@@ -5,7 +5,7 @@ import os
 import ssl
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, Generator, Optional
+from typing import Any, Callable, Dict, Generator
 
 from pika import BlockingConnection, ConnectionParameters, PlainCredentials,SSLOptions
 from pricera.common import get_rabbitmq_host, get_rabbitmq_password, get_rabbitmq_user
@@ -18,7 +18,6 @@ class Consumer(ABC):
     @abstractmethod
     def consume(self, *args, **kwargs) -> None:
         """Process messages from a source."""
-        pass
 
 
 @dataclass

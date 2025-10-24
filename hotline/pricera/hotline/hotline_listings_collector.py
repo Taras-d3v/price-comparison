@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Any, Generator
 
 from pricera.common.collectors import BaseCollector
 from pricera.models import ResponseObject

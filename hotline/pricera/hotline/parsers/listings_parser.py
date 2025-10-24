@@ -1,9 +1,5 @@
-import re
 
-from bs4 import BeautifulSoup, Tag
 
-from pricera.models.hotline.listings_model import HotlineItemOfferModel, HotlineListingsModel
-import json
 
 
 class HotlineListingsParser:

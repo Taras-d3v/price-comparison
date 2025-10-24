@@ -1,7 +1,5 @@
-from dataclasses import dataclass
 from typing import Any, Iterable
 
-from scrapy import Request, Spider
 from scrapy.http import Response
 
 from pricera.common.base_scrapy_spider import BaseSpider

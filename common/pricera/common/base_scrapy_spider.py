@@ -1,9 +1,8 @@
 import uuid
 from collections import defaultdict
-from dataclasses import dataclass
 
 import scrapy
-from scrapy import Request, Spider
+from scrapy import Spider
 
 
 class BaseSpider(Spider):
