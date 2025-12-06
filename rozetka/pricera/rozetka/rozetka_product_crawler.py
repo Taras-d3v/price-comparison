@@ -12,7 +12,7 @@ logger = logging.getLogger("rozetka_product_crawler")
 class RozetkaProductCrawler(BaseCollector, RozetkaProductMixin):
     urls: list[str]
     mongo_client: MongoClient
-    is_synchronous: bool = False
+    supports_batch: bool = False
 
     def __post_init__(self):
         super().__init__()
