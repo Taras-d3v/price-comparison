@@ -32,23 +32,23 @@
       "handlers": ["console"],
       "propagate": false
     },
-
     "boto3": {
-      "level": "INFO",
-      "handlers": [],
-      "propagate": false
+      "level": "INFO"
     },
-
     "botocore": {
-      "level": "INFO",
-      "handlers": [],
-      "propagate": false
+      "level": "INFO"
     },
-
     "s3transfer": {
-      "level": "INFO",
-      "handlers": [],
-      "propagate": false
+      "level": "INFO"
+    },
+    "pymongo": {
+      "level": "INFO"
+    },
+    "S3Pipeline": {
+      "level": "INFO"
+    },
+    "urllib3": {
+      "level": "INFO"
     }
   }
 }
