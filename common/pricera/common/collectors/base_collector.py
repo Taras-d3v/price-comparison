@@ -62,7 +62,7 @@ class ScrapyConfigurationMixin:
 
 class BaseCollector(ScrapyConfigurationMixin):
     storage_bucket: ClassVar[str] = "pricera-crawled-data"
-    is_synchronous: ClassVar[bool] = True
+    supports_batch: ClassVar[bool] = False
     db_name: ClassVar[str] = "pricera"
 
     @staticmethod
