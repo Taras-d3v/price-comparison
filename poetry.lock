@@ -999,6 +999,20 @@ type = "directory"
 url = "hotline"
 
 [[package]]
+name = "pricera-message-generator"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = ">=3.13"
+groups = ["main"]
+files = []
+develop = true
+
+[package.source]
+type = "directory"
+url = "message_generator"
+
+[[package]]
 name = "pricera-models"
 version = "0.1.0"
 description = ""
@@ -1877,4 +1891,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.1"
 python-versions = "3.13.1"
-content-hash = "8020457eaf66cea89931c32ae7cc7c2c9e1ec5fff8af24a39bcfcc6bb504a206"
+content-hash = "88599e5323aaba72efe12d8431a821c962b36a3d7eae733402930c615251ce4b"
