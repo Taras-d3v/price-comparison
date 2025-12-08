@@ -9,10 +9,11 @@ authors = [
 
 [tool.poetry.dependencies]
 pricera-common = {path = "common", develop = true}
+pricera-message-generator = {path = "message_generator", develop = true}
 pricera-models = {path = "models", develop = true}
 pricera-rozetka = {path = "rozetka", develop = true}
-
 pricera-hotline = {path = "hotline", develop = true}
+
 python = "3.13.1"
 
 [tool.poetry.group.dev.dependencies]
