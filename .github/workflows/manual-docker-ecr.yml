@@ -1,0 +1,53 @@
+name: Manual Docker build and push to ECR (single tag)
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Git branch to build from"
+        required: true
+        default: "master"
+
+      image_name:
+        description: "Docker image name (ECR repository name)"
+        required: true
+        default: "my-app"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout selected branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: Prepare variables
+        run: |
+          BRANCH="${{ github.event.inputs.branch }}"
+          IMAGE="${{ github.event.inputs.image_name }}"
+          SAFE_BRANCH=$(echo "$BRANCH" | tr '/' '-')
+          echo "BRANCH=$SAFE_BRANCH" >> $GITHUB_ENV
+          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            123456789012.dkr.ecr.eu-central-1.amazonaws.com/${{ env.IMAGE }}:${{ env.BRANCH }}
