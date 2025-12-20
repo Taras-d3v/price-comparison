@@ -48,22 +48,22 @@ jobs:
         run: |
           cat <<EOF > Dockerfile
           FROM python:3.13-slim
-      
+
           WORKDIR /app
-      
+
           # Install system dependencies for Poetry
           RUN apt-get update && apt-get install -y curl build-essential git && rm -rf /var/lib/apt/lists/*
-      
+
           # Install Poetry
           RUN curl -sSL https://install.python-poetry.org | python3 -
           ENV PATH="/root/.local/bin:\$PATH"
-      
+
           # Copy entire project (needed for local packages)
           COPY . /app
-      
+
           # Install dependencies without installing the package itself
           RUN poetry install --no-root --only main
-      
+
           # CMD is empty, Helm will handle running the container
           CMD []
           EOF
