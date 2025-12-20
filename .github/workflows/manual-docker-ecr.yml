@@ -75,4 +75,4 @@ jobs:
           context: .
           push: true
           tags: |
-            628987527478.dkr.ecr.us-east-1.amazonaws.com/pricera:${{ env.BRANCH }}-${{ env.IMAGE_NAME }}
+            628987527478.dkr.ecr.us-east-1.amazonaws.com/pricera:${{ env.BRANCH }}.${{ env.IMAGE_NAME }}
