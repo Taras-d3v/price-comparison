@@ -11,7 +11,7 @@ on:
       image_name:
         description: "Docker image name (ECR repository name)"
         required: true
-        default: "my-app"
+        default: "branch-name-day-month-year-v-version"
 
 permissions:
   contents: read
@@ -34,12 +34,11 @@ jobs:
           echo "BRANCH=$SAFE_BRANCH" >> $GITHUB_ENV
           echo "IMAGE=$IMAGE" >> $GITHUB_ENV
 
-      - name: Configure AWS credentials
+      - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
+          role-to-assume: arn:aws:iam::628987527478:role/GitHubActionsECRRole
+          aws-region: us-east-1
 
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
@@ -50,4 +49,4 @@ jobs:
           context: .
           push: true
           tags: |
-            123456789012.dkr.ecr.eu-central-1.amazonaws.com/${{ env.IMAGE }}:${{ env.BRANCH }}
+            628987527478.dkr.ecr.us-east-1.amazonaws.com/${{ env.IMAGE }}:${{ env.BRANCH }}
