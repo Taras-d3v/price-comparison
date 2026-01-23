@@ -23,7 +23,7 @@ class MongoCollectionMessageGenerator(BaseMongoMessageGenerator):
         configurations = message_configuration["message_generator_config"]
         for config_name, config in configurations.items():
             for document in self.paginate_collection(**config):
-                print(document)
+                yield document
 
 
 if __name__ == "__main__":
